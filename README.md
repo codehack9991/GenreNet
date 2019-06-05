@@ -47,4 +47,15 @@ Keras was used to create an LSTM Recurrent Neural Network. The following layers 
 - 2 dense layer of 256 nodes 
  
 Softmax activation Function used and 200 epochs
+
+# Similarity between Songs
+## Harmonic Reduction
+
+A single music can have hundreds of notes which makes it harder to analyze it.  Which can be simplified based on its harmony to make it easier to understand while losing some details like the melody.  
+In music, a reduction is an arrangement or transcription of an existing score or composition in which complexity is lessened to make analysis, performance, or practice easier or clearer; the number of parts may be reduced or rhythm may be simplified, such as through the use of block chords. 
+Manually there are several ways of doing that, considering the context on the measure being analyzed, the music’s current key signature and the set of notes on the current measure. In this project we followed these steps: 
+- Find the music key signature
+- Each measure contains Four beats. We compute the chord counting the 4 most used notes per measure and try to create a Chord with it. 
+- Use Music21 to find the Chord and its function based on the key signature. Function, in music, is the term used to denote the relationship of a chord to a tonal center. 
+- Simplify Chord names to avoid names like “bII#86#6#5” and provide the input to Word2Vec algorithm.
  
